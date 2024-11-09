@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Add Font Awesome for icons -->
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Ibne_billa</a>
+        <nav class="navbar">
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i> <!-- Burger Icon -->
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <section class="home" id="home">
+        <video class="video" width="100%" muted autoplay loop> <source src="y2mate.com - New Trending Neon Effect Animation Logo Black Screen Video ll Neon Light Effect ll Kinemaster_720p.mp4"></video>
+        <div class="meow">
+            <h3>Waleed Ajmal</h3>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <table border="0" width="100%" class="about-table">
+            <tr>
+                <td colspan="2">
+                    <div class="h1">
+                        <h1 class="h1">About me</h1>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="about-text">
+                    Hello <span style="color:red">-. .. --. --. .-</span><br>
+                    My name is <span style="color: red;">Waleed Ajmal</span>, and I specialize in web development, data management, and video editing. Lately, I've been enhancing my web development skills by practicing JavaScript to make websites more interactive and engaging. I also enjoy coding simple yet impactful projects in Python, which is one of my areas of expertise. In my free time, I focus on improving my programming skills or jawline exercises to stay sharp.
+                </td>
+                <td class="about-image">
+                    <img style="border-radius: 25px;" src="IMG_20240818_224658_583.jpg" alt="">
+                </td>
+            </tr>
+        </table>
+        
+    </section>
+    <section id="projects" class="projects">
+        <h1 style="margin-top: 7%; text-align:center">Projects<br>
+        <div><h2 style="font-size: 30px; margin-top: 20%; color:red">Comming soon</h2></div></h1>
+    </section>
+     <!-- Footer Section -->
+    <section class="contact" id="contact">
+        <footer>
+            <h1 style="font-size: 40px; text-align:center">Contact me</h1>
+            <div class="social-icons" style="width: 100%;">
+                <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="mailto:your-email@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="end">Waleed Ajmal | Copyright © 2024</div>
+        </footer>
+    </section>
+
+   
+
+    <script>
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
+        window.onscroll = () => {
+        sections.forEach(sec => {
+            let top = window.scrollY;
+            let offset = sec.offsetTop;
+            let height = sec.offsetHeight;
+            let id = sec.getAttribute('id');
+            if(top >= offset && top < offset + height) {
+                navLinks.forEach(links => {
+                    links.classList.remove('active');
+                    document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                });
+            };
+        });
+    };
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('nav-links').classList.toggle('active');
+    });
+    
+    </script>
+</body>
+</html>
